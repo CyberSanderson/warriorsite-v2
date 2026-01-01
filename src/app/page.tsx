@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Successful Faith | Faith Over Fear',
+  title: 'Successful Faith | Christian Streetwear',
   description: 'Equipping the modern saint for spiritual warfare and marketplace success.',
 }
 
@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <main>
         
-        {/* HERO SECTION: IDENTITY FOCUS */}
+        {/* HERO SECTION: THE WARRIOR CALL */}
         <section className="hero" style={{ 
-            backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("/images/hero-bg.webp")', // Ensure you have a hero-bg.webp or remove this line to use CSS fallback
+            backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("/images/hero-bg.webp")', 
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '85vh',
@@ -23,26 +23,25 @@ export default function Home() {
             padding: '0 1rem'
         }}>
             <div className="hero-content">
-                <h1 className="hero-title" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '4.5rem', marginBottom: '1rem', color: '#fff', letterSpacing: '2px' }}>
-                    Faith <span style={{ color: 'var(--accent-gold)' }}>X</span> Success
+                <h1 className="hero-title" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '4.5rem', marginBottom: '1rem', color: '#fff', letterSpacing: '2px', lineHeight: '1.1' }}>
+                    Equip Yourself <br />
+                    <span style={{ color: 'var(--accent-gold)' }}>For The Battle</span>
                 </h1>
-                <p className="hero-subtitle" style={{ fontSize: '1.4rem', color: '#e0e0e0', marginBottom: '2.5rem', maxWidth: '700px', lineHeight: '1.6' }}>
-                    We bridge the gap between spiritual warfare and marketplace excellence.
-                    <br />
-                    <strong>Pray Hard. Work Smart. Stand Firm.</strong>
+                <p className="hero-subtitle" style={{ fontSize: '1.4rem', color: '#e0e0e0', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
+                    Premium Heavyweight Armor for the Modern Saint.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
                     <Link href="/about" className="secondary-btn" style={{ background: 'transparent', border: '1px solid #fff' }}>
                         Our Mission
                     </Link>
                     <Link href="/store" className="cta-btn">
-                        Equip Yourself
+                        Shop The Armory
                     </Link>
                 </div>
             </div>
         </section>
 
-        {/* SECTION 2: THE MANIFESTO (MOVED UP) */}
+        {/* SECTION 2: THE MANIFESTO */}
         <section style={{ background: '#111', padding: '6rem 2rem', textAlign: 'center', borderBottom: '1px solid #222' }}>
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                 <h2 style={{ fontFamily: 'var(--font-cinzel)', color: 'var(--accent-gold)', marginBottom: '1.5rem', fontSize: '2.2rem' }}>
@@ -56,19 +55,14 @@ export default function Home() {
             </div>
         </section>
 
-          {/* SECTION 3: THE ARMORY */}
+        {/* SECTION 3: THE ARSENAL (4-Item Grid) */}
         <section className="container" style={{ padding: '5rem 1.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '3rem' }}>
-                <h2 className="section-title" style={{ marginBottom: 0 }}>The Arsenal</h2>
+                <h2 className="section-title" style={{ marginBottom: 0 }}>Latest Drops</h2>
                 <Link href="/store" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>View Full Store &rarr;</Link>
             </div>
             
-            {/* UPDATED TO 4-ITEM GRID */}
-            <div className="product-grid" style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-                gap: '2rem' 
-            }}>
+            <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
                 
                 {/* 1. Iron Sharpens Iron */}
                 <div className="product-card">
@@ -98,7 +92,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 3. Armor of God Hoodie (RESTORED) */}
+                {/* 3. Armor of God Hoodie (Restored) */}
                 <div className="product-card">
                     <Link href="/store/armor-of-god-hoodie">
                         <div className="image-wrapper">
@@ -112,11 +106,11 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 4. The Protection Guide ($5 ENTRY POINT) */}
+                {/* 4. Protection Guide ($5 Entry Point) */}
                 <div className="product-card">
                     <Link href="/store/protection-guide">
                         <div className="image-wrapper">
-                            <img src="/images/cover.webp" alt="Protection Guide" className="product-img" />
+                            <img src="/images/guide-cover.webp" alt="Protection Guide" className="product-img" />
                             <div className="hover-overlay"><span>Download Now</span></div>
                         </div>
                     </Link>
@@ -129,28 +123,27 @@ export default function Home() {
             </div>
         </section>
 
-        {/* SECTION 4: SPIRITUAL RESOURCES (New Section) */}
+        {/* SECTION 4: SHARPEN YOUR SPIRIT (Pushes the Journal) */}
         <section style={{ background: '#0a0a0a', padding: '6rem 2rem', borderTop: '1px solid #222' }}>
             <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4rem' }}>
                 <div style={{ flex: '1 1 400px' }}>
                     <h2 style={{ fontFamily: 'var(--font-cinzel)', fontSize: '2.5rem', marginBottom: '1.5rem', color: '#fff' }}>
-                        Sharpen Your Spirit
+                        Enter The War Room
                     </h2>
                     <p style={{ color: '#ccc', lineHeight: '1.8', marginBottom: '2rem' }}>
-                        We don't just sell shirts; we teach strategy. Access our free guides, prayer journals, and warfare tactics to keep your mind sharp.
+                        Stop praying in circles. Start building a history with God. 
+                        Our 30-Day Guided Prayer Journal is designed to help you focus your prayers, document your breakthroughs, and hear God clearly.
                     </p>
                     <Link href="/prayer-journal" className="secondary-btn">
-                        Enter The War Room
+                        Get The Journal ($15)
                     </Link>
                 </div>
-                <div style={{ flex: '1 1 400px', background: '#111', padding: '2rem', border: '1px solid #333' }}>
-                    <h3 style={{ color: 'var(--accent-gold)', marginBottom: '1rem' }}>The Protection Guide</h3>
-                    <p style={{ color: '#888', marginBottom: '1.5rem' }}>
-                        A tactical manual for spiritual defense. 30 days of scripture loadouts.
-                    </p>
-                    <Link href="/store/protection-guide" style={{ color: '#fff', textDecoration: 'underline' }}>
-                        Download Manual ($5) &rarr;
-                    </Link>
+                <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
+                     <img 
+                        src="/images/journal-cover.webp" 
+                        alt="30-Day Prayer Journal" 
+                        style={{ maxWidth: '300px', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', border: '1px solid #333' }}
+                     />
                 </div>
             </div>
         </section>
