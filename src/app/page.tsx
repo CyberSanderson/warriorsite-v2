@@ -110,7 +110,7 @@ export default function Home() {
                 <div className="product-card">
                     <Link href="/store/protection-guide">
                         <div className="image-wrapper">
-                            <img src="/images/guide-cover.webp" alt="Protection Guide" className="product-img" />
+                            <img src="/images/cover.webp" alt="Protection Guide" className="product-img" />
                             <div className="hover-overlay"><span>Download Now</span></div>
                         </div>
                     </Link>
@@ -140,7 +140,7 @@ export default function Home() {
                 </div>
                 <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
                      <img 
-                        src="/images/journal-cover.webp" 
+                        src="/images/cover.webp" 
                         alt="30-Day Prayer Journal" 
                         style={{ maxWidth: '300px', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', border: '1px solid #333' }}
                      />
