@@ -13,11 +13,11 @@ export default function HoodieProductPage() {
         {/* LEFT: IMAGE GALLERY */}
         <div className="product-gallery">
             <div className="main-image-wrapper">
-                <img src="/images/hoodie-front.webp" alt="Armor of God Hoodie" />
+                <img src="/images/Angel-hoodie.webp" alt="Armor of God Hoodie" />
             </div>
             
             <div className="thumbnail-grid">
-                <img src="/images/angel-hoodie.webp" alt="Front View" className="thumbnail" style={{ borderColor: 'var(--accent-gold)' }} />
+                <img src="/images/Angel-hoodie.webp" alt="Front View" className="thumbnail" style={{ borderColor: 'var(--accent-gold)' }} />
                 {/* Add back view image if you have it */}
             </div>
         </div>
