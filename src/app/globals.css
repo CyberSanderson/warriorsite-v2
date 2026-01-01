@@ -1,26 +1,384 @@
-@import "tailwindcss";
-
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --text-main: #e5e5e5;
+    --text-muted: #a3a3a3;
+    --accent-gold: #d4af37; /* Vintage Gold */
+    --font-header: var(--font-cinzel); /* Linked to Next.js Font */
+    --font-body: var(--font-lato);     /* Linked to Next.js Font */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
+.main-nav {
+    background: #000000;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand {
+    font-family: var(--font-header);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.nav-links a:hover { color: var(--accent-gold); }
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #000;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-links a { margin: 1.5rem 0; font-size: 1.2rem; }
+    .nav-links.active { display: flex; }
+}
+
+/* =========================================
+   3. HERO & SECTIONS
+   ========================================= */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero-bg.webp'); /* Make sure you have a hero-bg.webp or remove URL */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid var(--accent-gold);
+    background-color: #111; /* Fallback */
+}
+
+.hero h1 {
+    font-family: var(--font-header);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--accent-gold);
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+.cta-btn:hover { background: #fff; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    font-family: var(--font-header);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-gold);
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+/* =========================================
+   4. HOME/STORE GRIDS
+   ========================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.product-card:hover .hover-overlay { opacity: 1; }
+
+.hover-overlay span {
+    color: #fff;
+    border: 1px solid var(--accent-gold);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+.product-details { padding: 1.5rem; text-align: center; }
+.product-details h3 { font-family: var(--font-header); font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
+.product-details .price { color: var(--accent-gold); font-weight: 700; }
+
+.secondary-btn {
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.secondary-btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.site-footer {
+    background-color: #050505;
+    border-top: 1px solid #222;
+    padding: 4rem 2rem;
+    margin-top: auto;
+}
+
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+
+/* =========================================
+   6. PRODUCT PAGE STYLES (NEW)
+   ========================================= */
+
+/* The Main Container */
+.product-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Left Column: Image Gallery */
+.product-gallery {
+    flex: 1 1 500px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.main-image-wrapper {
+    background: #0a0a0a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid #222;
+}
+
+.main-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.thumbnail-grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #333;
+    object-fit: cover;
+    transition: border-color 0.2s ease;
+}
+
+.thumbnail:hover {
+    border-color: var(--accent-gold);
+}
+
+/* Right Column: Text Info */
+.product-info-col {
+    flex: 1 1 400px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.badge {
+    display: inline-block;
+    background: #222;
+    color: var(--accent-gold);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #333;
+    margin-bottom: 1rem;
+}
+
+.product-title {
+    font-family: var(--font-header);
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.product-subtitle {
+    color: #888;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.product-price-lg {
+    font-size: 2rem;
+    color: var(--accent-gold);
+    font-family: var(--font-header);
+    margin-bottom: 2rem;
+}
+
+.buy-btn-lg {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--accent-gold);
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    border-radius: 4px;
+    transition: transform 0.2s, background 0.2s;
+    margin-bottom: 2.5rem;
+}
+
+.buy-btn-lg:hover {
+    transform: translateY(-2px);
+    background: #e5c965;
+}
+
+/* Mobile Fixes for Product Page */
+@media (max-width: 768px) {
+    .product-page-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .product-gallery, .product-info-col {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .product-title {
+        font-size: 2.2rem;
+    }
 }
