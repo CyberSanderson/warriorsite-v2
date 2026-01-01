@@ -29,7 +29,7 @@ export default function CEOProductPage() {
             <h1 className="product-title">God is my CEO</h1>
             <p className="product-subtitle">Faith Over Hustle Edition</p>
             
-            <div className="product-price-lg">$38.00</div>
+            <div className="product-price-lg">$36.99</div>
 
             {/* BUY BUTTON - REPLACE HREF WITH YOUR ACTUAL FOURTHWALL LINK */}
             <a 
