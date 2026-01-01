@@ -29,7 +29,7 @@ export default function HoodieProductPage() {
             <h1 className="product-title">Full Armor Hoodie</h1>
             <p className="product-subtitle">Premium Heavyweight Fleece</p>
             
-            <div className="product-price-lg">$65.00</div>
+            <div className="product-price-lg">$55.00</div>
 
             {/* BUY BUTTON */}
             <a 

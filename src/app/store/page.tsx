@@ -58,7 +58,7 @@ export default function StorePage() {
                 <div className="product-card">
                     <Link href="/store/armor-of-god-hoodie">
                         <div className="image-wrapper">
-                            <img src="/images/angel-hoodie.webp" alt="Armor of God Hoodie" className="product-img" />
+                            <img src="/images/Angel-hoodie.webp" alt="Armor of God Hoodie" className="product-img" />
                             <div className="hover-overlay">
                                 <span>View Product</span>
                             </div>
