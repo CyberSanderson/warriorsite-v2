@@ -49,7 +49,7 @@ export default function Home() {
                     </Link>
                     <div className="product-details">
                         <h3>God is my CEO</h3>
-                        <p className="price">$38.00</p>
+                        <p className="price">$36.99</p>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="product-card">
                     <Link href="/store/armor-of-god-hoodie">
                         <div className="image-wrapper">
-                            <img src="/images/angel-hoodie.webp" alt="Armor of God Hoodie" className="product-img" />
+                            <img src="/images/Angel-hoodie.webp" alt="Armor of God Hoodie" className="product-img" />
                             <div className="hover-overlay">
                                 <span>View Product</span>
                             </div>
@@ -65,7 +65,7 @@ export default function Home() {
                     </Link>
                     <div className="product-details">
                         <h3>Full Armor Hoodie</h3>
-                        <p className="price">$65.00</p>
+                        <p className="price">$55.00</p>
                     </div>
                 </div>
 

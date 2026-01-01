@@ -13,7 +13,7 @@ export default function CEOProductPage() {
         {/* LEFT: IMAGE GALLERY */}
         <div className="product-gallery">
             <div className="main-image-wrapper">
-                <img src="/images/ceo-back.webp" alt="God is my CEO Back View" />
+                <img src="/images/ceo-tee-back.webp" alt="God is my CEO Back View" />
             </div>
             
             <div className="thumbnail-grid">
