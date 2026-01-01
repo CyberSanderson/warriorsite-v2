@@ -50,7 +50,7 @@ export default function StorePage() {
                     </Link>
                     <div className="product-details">
                         <h3 className="product-title">God is my CEO</h3>
-                        <p className="product-price">$38.00</p>
+                        <p className="product-price">$36.99</p>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@ export default function StorePage() {
                     </Link>
                     <div className="product-details">
                         <h3 className="product-title">Full Armor Hoodie</h3>
-                        <p className="product-price">$65.00</p>
+                        <p className="product-price">$55.00</p>
                     </div>
                 </div>
 
