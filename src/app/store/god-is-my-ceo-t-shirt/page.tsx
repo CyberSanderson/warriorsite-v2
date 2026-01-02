@@ -33,7 +33,7 @@ export default function CEOProductPage() {
 
             {/* BUY BUTTON - REPLACE HREF WITH YOUR ACTUAL FOURTHWALL LINK */}
             <a 
-                href="https://successful-faith-shop.fourthwall.com/products/god-is-my-ceo-tee" 
+                href="https://successful-faith-shop.fourthwall.com/products/the-god-is-my-ceo-vintage-heavyweight-t-shirt-faith-over-hustle-edition" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="buy-btn-lg"
