@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Cinzel, Lato } from 'next/font/google'
-import Script from 'next/script' // Added for the JSON-LD
+import Script from 'next/script' // Required for Google Analytics & JSON-LD
 import './globals.css'
 
 // 1. Optimize Fonts
@@ -17,18 +17,16 @@ const lato = Lato({
   display: 'swap',
 })
 
-// 2. THE UPGRADED SEO BLOCK
+// 2. SEO & METADATA
 export const metadata: Metadata = {
-  // CRITICAL: This fixes the "Missing Canonical" issue
   metadataBase: new URL('https://www.successfulfaith.com'),
   
   title: {
-    template: '%s | Successful Faith', // This adds your brand to every page automatically
+    template: '%s | Successful Faith',
     default: 'Successful Faith | Christian Streetwear',
   },
   description: 'Equip yourself specifically for the battle. Premium Christian apparel and prayer tools.',
   
-  // This tells Google "This is the official URL"
   alternates: {
     canonical: './',
   },
@@ -38,7 +36,6 @@ export const metadata: Metadata = {
     apple: '/images/logo.webp', 
   },
   
-  // This makes your links look good when shared on Facebook/LinkedIn/Discord
   openGraph: {
     title: 'Successful Faith',
     description: 'Equipping the modern saint for spiritual warfare.',
@@ -49,10 +46,10 @@ export const metadata: Metadata = {
   },
 }
 
-// 3. JSON-LD STRUCTURED DATA (The "Hidden" SEO Boost)
+// 3. JSON-LD BUSINESS DATA
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ClothingStore', // More specific than "Organization"
+  '@type': 'ClothingStore',
   name: 'Successful Faith',
   url: 'https://www.successfulfaith.com',
   logo: 'https://www.successfulfaith.com/images/logo.webp',
@@ -80,7 +77,23 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${cinzel.variable} ${lato.variable}`}>
         
-        {/* Inject the JSON-LD Script for Google */}
+        {/* --- GOOGLE ANALYTICS START --- */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LBQMYKJHE0"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LBQMYKJHE0');
+          `}
+        </Script>
+        {/* --- GOOGLE ANALYTICS END --- */}
+
+        {/* JSON-LD Script for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -102,27 +115,23 @@ export default function RootLayout({
             </div>
         </nav>
 
-        {/* PAGE CONTENT INJECTED HERE */}
+        {/* PAGE CONTENT */}
         {children}
 
         {/* GLOBAL FOOTER */}
         <footer className="site-footer">
             <div className="container footer-inner">
-                
                 <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '3rem', marginBottom: '2rem' }}>
                     
-                    {/* Column 1: Brand */}
                     <div className="footer-branding" style={{ flex: 1, minWidth: '250px' }}>
                         <h4 style={{ color: '#fff', marginBottom: '1rem', fontFamily: 'var(--font-cinzel)' }}>Successful Faith</h4>
                         <p style={{ color: '#888', fontSize: '0.9rem', lineHeight: 1.6 }}>
                             Equipping the Saints for the work of ministry.<br />
                             Est. 2025
                         </p>
-                        
                         <div style={{ marginTop: '1.5rem', borderLeft: '2px solid var(--accent-gold, #d4af37)', paddingLeft: '1rem' }}>
                             <p style={{ color: '#bbb', fontSize: '0.85rem', lineHeight: 1.6, margin: 0 }}>
-                                <strong>Location:</strong><br />
-                                New York, NY
+                                <strong>Location:</strong><br />New York, NY
                             </p>
                             <p style={{ color: '#bbb', fontSize: '0.85rem', marginTop: '0.5rem' }}>
                                 <strong>Support:</strong> <a href="mailto:support@successfulfaith.com" style={{ color: '#fff', textDecoration: 'underline' }}>support@successfulfaith.com</a>
@@ -130,7 +139,6 @@ export default function RootLayout({
                         </div>
                     </div>
 
-                    {/* Column 2: Links */}
                     <div className="footer-links" style={{ minWidth: '200px' }}>
                         <h4 style={{ color: '#fff', marginBottom: '1rem', fontFamily: 'var(--font-cinzel)' }}>Customer Care</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
