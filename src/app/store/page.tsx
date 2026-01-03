@@ -57,9 +57,9 @@ export default function StorePage() {
                 {/* PRODUCT 3: JEHOVAH NISSI (NEW ADDITION) */}
                 <div className="product-card">
                     {/* Make sure this href matches the folder name you created */}
-                    <Link href="/store/jehovah-nissi-tee"> 
+                    <Link href="/store/jehovah-nissi-t-shirt"> 
                         <div className="image-wrapper">
-                            <img src="/images/jehovah-nissi-back.webp" alt="Jehovah Nissi Tee" className="product-img" />
+                            <img src="/images/jehovah-nissi-back.webp" alt="Jehovah Nissi T-shirt" className="product-img" />
                             <div className="hover-overlay">
                                 <span>View Product</span>
                             </div>
