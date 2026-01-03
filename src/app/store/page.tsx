@@ -71,7 +71,24 @@ export default function StorePage() {
                     </div>
                 </div>
 
-                {/* PRODUCT 4: ARMOR OF GOD HOODIE */}
+                {/* PRODUCT 4: JEHOVAH NISSI CREWNECK (NEW) */}
+                <div className="product-card">
+                    <Link href="/store/jehovah-nissi-crewneck"> 
+                        <div className="image-wrapper">
+                            {/* Ensure this image exists! */}
+                            <img src="/images/nissi-crew-front.webp" alt="Jehovah Nissi Crewneck" className="product-img" />
+                            <div className="hover-overlay">
+                                <span>View Product</span>
+                            </div>
+                        </div>
+                    </Link>
+                    <div className="product-details">
+                        <h3 className="product-title">Victory Standard Crewneck</h3>
+                        <p className="product-price">$65.00</p>
+                    </div>
+                </div>
+
+                {/* PRODUCT 5: ARMOR OF GOD HOODIE */}
                 <div className="product-card">
                     <Link href="/store/armor-of-god-hoodie">
                         <div className="image-wrapper">
@@ -87,7 +104,7 @@ export default function StorePage() {
                     </div>
                 </div>
 
-                {/* PRODUCT 5: PROTECTION GUIDE */}
+                {/* PRODUCT : PROTECTION GUIDE */}
                 <div className="product-card">
                     <Link href="/store/protection-guide">
                         <div className="image-wrapper">
