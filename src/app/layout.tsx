@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cinzel, Lato } from 'next/font/google'
+import Script from 'next/script' // Added for the JSON-LD
 import './globals.css'
 
 // 1. Optimize Fonts
@@ -16,13 +17,58 @@ const lato = Lato({
   display: 'swap',
 })
 
+// 2. THE UPGRADED SEO BLOCK
 export const metadata: Metadata = {
-  title: 'Successful Faith | Christian Streetwear',
-  description: 'Equip yourself specifically for the battle. Premium Christian apparel and prayer tools.',
-  icons: {
-    icon: '/images/logo.webp', // <--- THIS SETS THE FAVICON
-    apple: '/images/logo.webp', // <--- THIS SETS THE ICON FOR IPHONES
+  // CRITICAL: This fixes the "Missing Canonical" issue
+  metadataBase: new URL('https://www.successfulfaith.com'),
+  
+  title: {
+    template: '%s | Successful Faith', // This adds your brand to every page automatically
+    default: 'Successful Faith | Christian Streetwear',
   },
+  description: 'Equip yourself specifically for the battle. Premium Christian apparel and prayer tools.',
+  
+  // This tells Google "This is the official URL"
+  alternates: {
+    canonical: './',
+  },
+  
+  icons: {
+    icon: '/images/logo.webp', 
+    apple: '/images/logo.webp', 
+  },
+  
+  // This makes your links look good when shared on Facebook/LinkedIn/Discord
+  openGraph: {
+    title: 'Successful Faith',
+    description: 'Equipping the modern saint for spiritual warfare.',
+    url: 'https://www.successfulfaith.com',
+    siteName: 'Successful Faith',
+    locale: 'en_US',
+    type: 'website',
+  },
+}
+
+// 3. JSON-LD STRUCTURED DATA (The "Hidden" SEO Boost)
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ClothingStore', // More specific than "Organization"
+  name: 'Successful Faith',
+  url: 'https://www.successfulfaith.com',
+  logo: 'https://www.successfulfaith.com/images/logo.webp',
+  description: 'Equipping the modern saint for spiritual warfare and marketplace success.',
+  foundingDate: '2025',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'New York',
+    addressRegion: 'NY',
+    addressCountry: 'US'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@successfulfaith.com',
+    contactType: 'customer support'
+  }
 }
 
 export default function RootLayout({
@@ -34,11 +80,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${cinzel.variable} ${lato.variable}`}>
         
+        {/* Inject the JSON-LD Script for Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         {/* GLOBAL NAVBAR */}
         <nav className="main-nav">
             <div className="nav-container">
                 <a href="/" className="nav-brand">
-                    {/* Next.js treats /public as the root for images */}
                     <img src="/images/logo.webp" alt="Successful Faith" className="nav-logo" />
                 </a>
 
