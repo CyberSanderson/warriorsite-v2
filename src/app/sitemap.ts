@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.successfulfaith.com'
 
   return [
+    // --- MAIN PAGES ---
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -28,7 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    // PRODUCTS
+
+    // --- PRODUCTS ---
     {
       url: `${baseUrl}/store/iron-sharpens-iron-t-shirt`,
       lastModified: new Date(),
@@ -48,12 +50,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/store/jehovah-nissi-t-shirt`, // <--- NEW ADDITION
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/store/jehovah-nissi-crewneck`, // <--- NEW ADDITION
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/store/protection-guide`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    // POLICIES
+
+    // --- POLICIES ---
     {
       url: `${baseUrl}/policies/shipping-policy`,
       lastModified: new Date(),
@@ -73,7 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/policies/terms-of-service`,
+      url: `${baseUrl}/policies/terms-policy`, // Check: In your footer this is 'terms-policy', but commonly 'terms-of-service'
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
