@@ -10,7 +10,7 @@ export default function JournalPage() {
     <main>
         {/* HERO SECTION */}
         <section style={{ 
-            background: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("/images/journal-bg.webp")', 
+            background: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("/images/journal-cover.webp")', 
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             padding: '6rem 2rem', 

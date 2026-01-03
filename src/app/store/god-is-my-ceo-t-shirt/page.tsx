@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+// 1. Import the reusable gallery component
+import ProductGallery from '../../components/ProductGallery' 
 
 export const metadata: Metadata = {
   title: 'God is my CEO | Vintage Gold Edition',
@@ -10,17 +12,14 @@ export default function CEOProductPage() {
   return (
     <main className="product-page-container">
         
-        {/* LEFT: IMAGE GALLERY */}
-        <div className="product-gallery">
-            <div className="main-image-wrapper">
-                <img src="/images/ceo-tee-back.webp" alt="God is my CEO Back View" />
-            </div>
-            
-            <div className="thumbnail-grid">
-                <img src="/images/ceo-tee-front.webp" alt="Front View" className="thumbnail" />
-                <img src="/images/ceo-tee-back.webp" alt="Back View" className="thumbnail" style={{ borderColor: 'var(--accent-gold)' }} />
-            </div>
-        </div>
+        {/* LEFT: DYNAMIC IMAGE GALLERY */}
+        <ProductGallery 
+          images={[
+            // 2. We put the Back image first so it shows as the main one
+            { src: '/images/ceo-tee-back.webp', alt: 'God is my CEO Back View - Faith Over Hustle' },
+            { src: '/images/ceo-tee-front.webp', alt: 'God is my CEO Front View' }
+          ]} 
+        />
 
         {/* RIGHT: PRODUCT INFO */}
         <div className="product-info-col">
@@ -31,7 +30,7 @@ export default function CEOProductPage() {
             
             <div className="product-price-lg">$36.99</div>
 
-            {/* BUY BUTTON - REPLACE HREF WITH YOUR ACTUAL FOURTHWALL LINK */}
+            {/* BUY BUTTON */}
             <a 
                 href="https://successful-faith-shop.fourthwall.com/products/the-god-is-my-ceo-vintage-heavyweight-t-shirt-faith-over-hustle-edition" 
                 target="_blank"

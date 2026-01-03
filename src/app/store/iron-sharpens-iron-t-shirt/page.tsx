@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+// Make sure this path matches where you saved the component
+import ProductGallery from '../../components/ProductGallery' 
 
 export const metadata: Metadata = {
   title: 'Iron Sharpens Iron | Heavyweight Christian Tee',
@@ -10,21 +12,16 @@ export default function IronProductPage() {
   return (
     <main className="product-page-container">
         
-        {/* LEFT: IMAGE GALLERY */}
-        <div className="product-gallery">
-            <div className="main-image-wrapper">
-                {/* UPDATED IMAGE */}
-                <img src="/images/iron-back.webp" alt="Iron Sharpens Iron Back View" />
-            </div>
-            
-            <div className="thumbnail-grid">
-                {/* UPDATED THUMBNAILS */}
-                <img src="/images/iron-front.webp" alt="Front View" className="thumbnail" />
-                <img src="/images/iron-back.webp" alt="Back View" className="thumbnail" style={{ borderColor: 'var(--accent-gold)' }} />
-            </div>
-        </div>
+        {/* LEFT: DYNAMIC IMAGE GALLERY */}
+        {/* We replaced the old static div with this Component */}
+        <ProductGallery 
+          images={[
+            { src: '/images/iron-back.webp', alt: 'Iron Sharpens Iron - Back View (Sword Crest)' },
+            { src: '/images/iron-front.webp', alt: 'Iron Sharpens Iron - Front View' }
+          ]} 
+        />
 
-        {/* RIGHT: PRODUCT INFO */}
+        {/* RIGHT: PRODUCT INFO (Kept exactly the same) */}
         <div className="product-info-col">
             <span className="badge">Brotherhood Collection</span>
             
