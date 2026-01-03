@@ -54,7 +54,24 @@ export default function StorePage() {
                     </div>
                 </div>
 
-                {/* PRODUCT 3: ARMOR OF GOD HOODIE */}
+                {/* PRODUCT 3: JEHOVAH NISSI (NEW ADDITION) */}
+                <div className="product-card">
+                    {/* Make sure this href matches the folder name you created */}
+                    <Link href="/store/jehovah-nissi-tee"> 
+                        <div className="image-wrapper">
+                            <img src="/images/jehovah-nissi-back.webp" alt="Jehovah Nissi Tee" className="product-img" />
+                            <div className="hover-overlay">
+                                <span>View Product</span>
+                            </div>
+                        </div>
+                    </Link>
+                    <div className="product-details">
+                        <h3 className="product-title">Jehovah Nissi</h3>
+                        <p className="product-price">$38.00</p>
+                    </div>
+                </div>
+
+                {/* PRODUCT 4: ARMOR OF GOD HOODIE */}
                 <div className="product-card">
                     <Link href="/store/armor-of-god-hoodie">
                         <div className="image-wrapper">
@@ -70,7 +87,7 @@ export default function StorePage() {
                     </div>
                 </div>
 
-                {/* PRODUCT 4: PROTECTION GUIDE */}
+                {/* PRODUCT 5: PROTECTION GUIDE */}
                 <div className="product-card">
                     <Link href="/store/protection-guide">
                         <div className="image-wrapper">
