@@ -110,6 +110,7 @@ export default function RootLayout({
                     <a href="/">Home</a>
                     <a href="/store">The Armory</a>
                     <a href="/prayer-journal">Journal</a>
+                    <a href="/blog">Blog</a> {/* <--- NEW LINK ADDED HERE */}
                     <a href="/about">About</a>
                 </div>
             </div>
