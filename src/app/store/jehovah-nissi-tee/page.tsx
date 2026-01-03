@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import ProductGallery from '../../components/ProductGallery'
 
 export const metadata: Metadata = {
-  title: 'Jehovah Nissi | The Lord Is My Banner',
-  description: 'Exodus 17:15. Heavyweight Christian streetwear representing victory in spiritual warfare.',
+  title: 'Jehovah Nissi Heavyweight T-Shirt | Christian Streetwear',
+  description: 'Exodus 17:15. Premium Christian graphic tee featuring Jehovah Nissi - The Lord is My Banner.',
 }
 
 export default function NissiProductPage() {
