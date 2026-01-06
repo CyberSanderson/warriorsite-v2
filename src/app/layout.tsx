@@ -78,19 +78,19 @@ export default function RootLayout({
       <body className={`${cinzel.variable} ${lato.variable}`}>
         
         {/* --- GOOGLE ANALYTICS START --- */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-LBQMYKJHE0"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-LBQMYKJHE0');
-          `}
-        </Script>
+        {/* Change strategy from "afterInteractive" to "lazyOnload" */}
+    <Script
+      src="https://www.googletagmanager.com/gtag/js?id=G-LBQMYKJHE0"
+      strategy="lazyOnload"  // <--- CHANGE THIS
+    />
+    <Script id="google-analytics" strategy="lazyOnload"> {/* <--- CHANGE THIS */}
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LBQMYKJHE0');
+      `}
+    </Script>
         {/* --- GOOGLE ANALYTICS END --- */}
 
         {/* JSON-LD Script for SEO */}

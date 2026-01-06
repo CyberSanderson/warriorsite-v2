@@ -104,7 +104,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 }
 
 /* =========================================
-   3. HERO & SECTIONS
+   3. HERO & SECTIONS (OPTIMIZED)
    ========================================= */
 .hero {
     height: 70vh;
@@ -112,11 +112,15 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero-bg.webp'); /* Make sure you have a hero-bg.webp or remove URL */
-    background-size: cover;
-    background-position: center;
+    position: relative; /* REQUIRED for Next.js <Image fill /> */
+    overflow: hidden;   /* Keeps the image contained */
+    background-color: #111; /* Fallback color */
     border-bottom: 4px solid var(--accent-gold);
-    background-color: #111; /* Fallback */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text sits on top of the image */
 }
 
 .hero h1 {
@@ -132,6 +136,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     font-weight: 300;
     margin-bottom: 2rem;
     color: #ccc;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 .cta-btn {
@@ -246,7 +251,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 
 /* =========================================
-   6. PRODUCT PAGE STYLES (NEW)
+   6. PRODUCT PAGE STYLES
    ========================================= */
 
 /* The Main Container */
@@ -288,18 +293,25 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     gap: 1rem;
 }
 
-.thumbnail {
+.thumbnail-wrapper {
     width: 80px;
     height: 80px;
     border-radius: 4px;
-    cursor: pointer;
+    overflow: hidden;
     border: 1px solid #333;
-    object-fit: cover;
+    cursor: pointer;
     transition: border-color 0.2s ease;
 }
 
-.thumbnail:hover {
+.thumbnail-wrapper:hover {
     border-color: var(--accent-gold);
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Right Column: Text Info */
