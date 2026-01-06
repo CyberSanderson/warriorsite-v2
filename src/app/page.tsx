@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image' // <--- Added this import
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,19 +11,41 @@ export default function Home() {
   return (
     <main>
         
-        {/* HERO SECTION: THE WARRIOR CALL */}
+        {/* HERO SECTION: THE WARRIOR CALL (OPTIMIZED) */}
         <section className="hero" style={{ 
-            backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("/images/hero-bg.webp")', 
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            position: 'relative', // Required for fill images
             height: '85vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            padding: '0 1rem'
+            padding: '0 1rem',
+            overflow: 'hidden' // Keeps the image from spilling out
         }}>
-            <div className="hero-content">
+            
+            {/* 1. THE OPTIMIZED BACKGROUND IMAGE */}
+            <Image 
+                src="/images/hero-bg.webp"
+                alt="Christian Streetwear Background"
+                fill
+                priority={true} // <--- This fixes the LCP Error
+                quality={85}
+                style={{ 
+                    objectFit: 'cover',
+                    zIndex: -2 // Puts it behind everything
+                }}
+            />
+
+            {/* 2. THE DARK GRADIENT OVERLAY */}
+            <div style={{
+                position: 'absolute',
+                top: 0, left: 0, right: 0, bottom: 0,
+                background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8))',
+                zIndex: -1 // Sits on top of image, behind text
+            }} />
+
+            {/* 3. THE CONTENT */}
+            <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
                 <h1 className="hero-title" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '4.5rem', marginBottom: '1rem', color: '#fff', letterSpacing: '2px', lineHeight: '1.1' }}>
                     Equip Yourself <br />
                     <span style={{ color: 'var(--accent-gold)' }}>For The Battle</span>
