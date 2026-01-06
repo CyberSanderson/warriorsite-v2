@@ -33,7 +33,7 @@ export default function HoodieProductPage() {
 
             {/* BUY BUTTON */}
             <a 
-                href="https://successful-faith-shop.fourthwall.com/products/armor-of-god-hoodie" 
+                href="https://successfulfaith.creator-spring.com/listing/be-strong-and-courageous-arc?product=212&variation=5818" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="buy-btn-lg"
