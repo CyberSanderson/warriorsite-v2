@@ -1,45 +1,134 @@
 'use client'
-import { Mail, X } from 'lucide-react' // Use the Mail icon instead
+import { Mail, X } from 'lucide-react'
 import { useState } from 'react'
 
 export default function SupportBubble() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+    <div 
+      className="z-50 flex flex-col items-end gap-2"
+      style={{ 
+        position: 'fixed', 
+        bottom: '20px', 
+        right: '20px', 
+        zIndex: 9999 
+      }}
+    >
       
       {/* The Popup Menu */}
       {isOpen && (
-        <div className="bg-white text-black p-5 rounded-lg shadow-2xl border border-gray-200 w-72 mb-2 animate-in slide-in-from-bottom-2">
-          <div className="flex items-center gap-3 mb-3">
-            {/* Optional: Put a small image of you or the logo here if you want */}
-            <div className="h-10 w-10 bg-black rounded-full flex items-center justify-center text-gold font-bold text-xs">
+        <div 
+          className="animate-in slide-in-from-bottom-2 fade-in duration-300"
+          style={{
+            backgroundColor: 'white',
+            color: 'black',
+            padding: '20px',
+            borderRadius: '12px',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.3)', // Stronger shadow for contrast
+            border: '1px solid #e5e5e5',
+            width: '300px',
+            maxWidth: '90vw', // Ensures it fits on mobile screens
+            marginBottom: '10px',
+            position: 'relative' // Needed for the absolute close button
+          }}
+        >
+          {/* --- NEW: TOP RIGHT CLOSE BUTTON --- */}
+          <button
+            onClick={() => setIsOpen(false)}
+            style={{
+                position: 'absolute',
+                top: '12px',
+                right: '12px',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: '#999',
+                padding: '4px'
+            }}
+            aria-label="Close Chat"
+          >
+            <X size={18} />
+          </button>
+
+          {/* Header */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px' }}>
+            <div style={{ 
+              height: '40px', 
+              width: '40px', 
+              backgroundColor: 'black', 
+              borderRadius: '50%', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              color: '#d4af37',
+              fontWeight: 'bold',
+              fontSize: '12px'
+            }}>
                 SF
             </div>
-            <div>
-                <p className="font-bold text-sm font-cinzel">The War Room</p>
-                <p className="text-[10px] text-gray-500 uppercase tracking-wide">Customer Support</p>
+            <div style={{ paddingRight: '20px' }}> {/* Padding prevents text hitting the X */}
+                <p style={{ fontWeight: 'bold', fontSize: '14px', margin: 0 }}>The War Room</p>
+                <p style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', margin: 0 }}>Customer Support</p>
             </div>
           </div>
           
-          <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-            Have a question about sizing or a prayer request? We are a small team, but we read every message.
+          <p style={{ fontSize: '13px', color: '#444', marginBottom: '20px', lineHeight: '1.5' }}>
+            Have a question about sizing or a prayer request? We read every message.
           </p>
 
+          {/* THE BOLD ACTION BUTTON */}
           <a 
             href="mailto:support@successfulfaith.com"
-            className="block w-full text-center bg-black text-white py-3 rounded text-xs font-bold uppercase tracking-widest hover:bg-[#d4af37] hover:text-black transition-all"
+            style={{
+              display: 'block',
+              width: '100%',
+              textAlign: 'center',
+              backgroundColor: '#000000',
+              color: '#ffffff',
+              padding: '14px 0',
+              borderRadius: '6px',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              textDecoration: 'none',
+              transition: '0.3s'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = '#d4af37';
+              e.currentTarget.style.color = '#000';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = '#000000';
+              e.currentTarget.style.color = '#fff';
+            }}
           >
             Send Email
           </a>
         </div>
       )}
 
-      {/* The Floating Button */}
+      {/* The Main Floating Icon (Toggles Open/Close) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="h-14 w-14 bg-[#d4af37] text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform border-2 border-white"
-        aria-label="Contact Support"
+        style={{
+            height: '60px',
+            width: '60px',
+            backgroundColor: '#d4af37',
+            color: 'black',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+            border: '2px solid white',
+            cursor: 'pointer',
+            transition: 'transform 0.2s'
+        }}
+        aria-label="Toggle Support Chat"
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
       >
         {isOpen ? <X size={24} /> : <Mail size={24} />}
       </button>
