@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Cinzel, Lato } from 'next/font/google'
-import Script from 'next/script' // Required for Google Analytics & JSON-LD
+import Script from 'next/script'
 import './globals.css'
+import SupportBubble from './components/SupportBubble' // <--- 1. IMPORT ADDED HERE
 
 // 1. Optimize Fonts
 const cinzel = Cinzel({ 
@@ -78,19 +79,18 @@ export default function RootLayout({
       <body className={`${cinzel.variable} ${lato.variable}`}>
         
         {/* --- GOOGLE ANALYTICS START --- */}
-        {/* Change strategy from "afterInteractive" to "lazyOnload" */}
-    <Script
-      src="https://www.googletagmanager.com/gtag/js?id=G-LBQMYKJHE0"
-      strategy="lazyOnload"  // <--- CHANGE THIS
-    />
-    <Script id="google-analytics" strategy="lazyOnload"> {/* <--- CHANGE THIS */}
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LBQMYKJHE0');
-      `}
-    </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LBQMYKJHE0"
+          strategy="lazyOnload"
+        />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LBQMYKJHE0');
+          `}
+        </Script>
         {/* --- GOOGLE ANALYTICS END --- */}
 
         {/* JSON-LD Script for SEO */}
@@ -110,7 +110,7 @@ export default function RootLayout({
                     <a href="/">Home</a>
                     <a href="/store">The Armory</a>
                     <a href="/prayer-journal">Journal</a>
-                    <a href="/blog">Blog</a> {/* <--- NEW LINK ADDED HERE */}
+                    <a href="/blog">Blog</a>
                     <a href="/about">About</a>
                 </div>
             </div>
@@ -163,6 +163,9 @@ export default function RootLayout({
                 </div>
             </div>
         </footer>
+
+        {/* --- 2. SUPPORT BUBBLE ADDED HERE --- */}
+        <SupportBubble />
 
       </body>
     </html>
