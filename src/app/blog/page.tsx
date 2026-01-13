@@ -44,6 +44,29 @@ export default function BlogIndexPage() {
                 </Link>
             </article>
 
+            {/* ARTICLE 2: IRON SHARPENS IRON (NEW) */}
+            <article className="blog-card" style={{ background: '#111', borderRadius: '8px', overflow: 'hidden', border: '1px solid #333' }}>
+                <Link href="/blog/iron-sharpens-iron-meaning" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div style={{ height: '200px', background: 'linear-gradient(45deg, #2c0b0e, #000)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        {/* Placeholder Icon: Swords for Iron/Warfare */}
+                        <span style={{ fontSize: '3rem' }}>⚔️</span>
+                    </div>
+                    
+                    <div className="card-content" style={{ padding: '1.5rem' }}>
+                        <span style={{ color: '#d4af37', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                            Brotherhood & Discipline
+                        </span>
+                        <h2 style={{ fontSize: '1.4rem', margin: '0.5rem 0 1rem', fontFamily: 'var(--font-cinzel)', lineHeight: '1.3' }}>
+                            Iron Sharpens Iron: The Meaning of Proverbs 27:17
+                        </h2>
+                        <p style={{ color: '#888', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+                            True brotherhood isn't gentle—it involves friction and fire. Discover why you need spiritual conflict to stay sharp.
+                        </p>
+                        <span style={{ color: '#fff', textDecoration: 'underline', fontSize: '0.9rem' }}>Read Article →</span>
+                    </div>
+                </Link>
+            </article>
+
         </div>
 
     </main>
