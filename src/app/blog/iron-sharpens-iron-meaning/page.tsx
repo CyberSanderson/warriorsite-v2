@@ -126,7 +126,7 @@ export default function IronSharpensIronPage() {
           <div style={{ background: 'linear-gradient(145deg, #1a1a1a, #000)', border: '1px solid #333', padding: '3rem 2rem', borderRadius: '12px', marginTop: '4rem', textAlign: 'center' }}>
             <h3 style={{ fontFamily: 'var(--font-cinzel), serif', color: '#fff', fontSize: '2rem', marginBottom: '1rem' }}>Wear Your Creed</h3>
             <p style={{ marginBottom: '2rem', color: '#aaa', maxWidth: '500px', marginInline: 'auto' }}>
-              You believe in the code. Now wear the armor. The <strong>Iron Sharpens Iron Heavyweight Hoodie</strong> is available now.
+              You believe in the code. Now wear the armor. The <strong>Iron Sharpens Iron Heavyweight T-Shirt</strong> is available now.
             </p>
             <Link href="/store/iron-sharpens-iron-t-shirt" style={{ display: 'inline-block', background: '#d4af37', color: '#000', textDecoration: 'none', padding: '1rem 2.5rem', fontSize: '1rem', fontWeight: 'bold', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px' }}>
               Shop The Collection
