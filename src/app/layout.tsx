@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { Cinzel, Lato } from 'next/font/google'
 import Script from 'next/script'
-import Link from 'next/link' // <--- Changed to Next.js Link for speed
+import Link from 'next/link' 
 import './globals.css'
 import SupportBubble from './components/SupportBubble'
+import Navbar from './components/Navbar' // <--- Imported here
 
 // 1. Optimize Fonts
 const cinzel = Cinzel({ 
@@ -100,27 +101,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* GLOBAL NAVBAR (UPDATED LINKS) */}
-        <nav className="main-nav">
-            <div className="nav-container">
-                <Link href="/" className="nav-brand">
-                    <img src="/images/logo.webp" alt="Successful Faith" className="nav-logo" />
-                </Link>
-
-                <div className="nav-links">
-                    <Link href="/">Home</Link>
-                    
-                    {/* UPDATED: Points to Warfare Collection */}
-                    <Link href="/store/collections/warfare">WARFARE</Link>
-                    
-                    {/* UPDATED: Points to Success Collection */}
-                    <Link href="/store/collections/success" style={{ color: '#d4af37' }}>SUCCESS</Link>
-                    
-                    <Link href="/blog">Blog</Link>
-                    <Link href="/about">About</Link>
-                </div>
-            </div>
-        </nav>
+        {/* --- REPLACED STATIC NAV WITH DYNAMIC COMPONENT --- */}
+        <Navbar />
 
         {/* PAGE CONTENT */}
         {children}

@@ -11,7 +11,7 @@ export default function PlannerPage() {
         
         {/* HERO SECTION */}
         <section style={{ 
-            background: 'linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url("/images/planner-cover.webp")', 
+            background: 'linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url("/images/journal-cover.webp")', 
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             padding: '6rem 2rem', 
