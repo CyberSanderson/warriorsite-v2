@@ -16,7 +16,7 @@ export default function ProtectionGuidePage() {
         {/* LEFT: STATIC IMAGE */}
         <div className="product-gallery">
              <img 
-                src="/images/guide-cover.webp" 
+                src="/images/cover.webp" 
                 alt="Divine Protection Guide Cover" 
                 style={{ width: '100%', borderRadius: '8px', border: '1px solid #333' }}
             />
