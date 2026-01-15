@@ -15,8 +15,8 @@ export default function NissiTeePage() {
         {/* LEFT: IMAGES */}
         <ProductGallery 
           images={[
-            { src: '/images/nissi-tee-front.webp', alt: 'Jehovah Nissi Front Print - The Lord is My Banner' },
-            { src: '/images/nissi-tee-detail.webp', alt: 'Heavyweight Fabric Detail' }
+            { src: '/images/jehovah-nissi-back.webp', alt: 'Jehovah Nissi Front Print - The Lord is My Banner' },
+            { src: '/images/jehovah-nissi-front.webp', alt: 'Heavyweight Fabric Detail' }
           ]} 
         />
 
