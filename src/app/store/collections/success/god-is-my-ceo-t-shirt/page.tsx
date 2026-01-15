@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 // 1. Import the reusable gallery component
-import ProductGallery from '../../components/ProductGallery' 
+import ProductGallery from '../../../../components/ProductGallery' 
 
 export const metadata: Metadata = {
   title: 'God is my CEO | Vintage Gold Edition',

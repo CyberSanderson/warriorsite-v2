@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Cinzel, Lato } from 'next/font/google'
 import Script from 'next/script'
+import Link from 'next/link' // <--- Changed to Next.js Link for speed
 import './globals.css'
-import SupportBubble from './components/SupportBubble' // <--- 1. IMPORT ADDED HERE
+import SupportBubble from './components/SupportBubble'
 
 // 1. Optimize Fonts
 const cinzel = Cinzel({ 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | Successful Faith',
     default: 'Successful Faith | Christian Streetwear',
   },
-  description: 'Equip yourself specifically for the battle. Premium Christian apparel and prayer tools.',
+  description: 'Equipping the modern saint for spiritual warfare and marketplace success. Premium Christian apparel and tools.',
   
   alternates: {
     canonical: './',
@@ -99,19 +100,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* GLOBAL NAVBAR */}
+        {/* GLOBAL NAVBAR (UPDATED LINKS) */}
         <nav className="main-nav">
             <div className="nav-container">
-                <a href="/" className="nav-brand">
+                <Link href="/" className="nav-brand">
                     <img src="/images/logo.webp" alt="Successful Faith" className="nav-logo" />
-                </a>
+                </Link>
 
                 <div className="nav-links">
-                    <a href="/">Home</a>
-                    <a href="/store">The Armory</a>
-                    <a href="/prayer-journal">Journal</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/about">About</a>
+                    <Link href="/">Home</Link>
+                    
+                    {/* UPDATED: Points to Warfare Collection */}
+                    <Link href="/store/collections/warfare">WARFARE</Link>
+                    
+                    {/* UPDATED: Points to Success Collection */}
+                    <Link href="/store/collections/success" style={{ color: '#d4af37' }}>SUCCESS</Link>
+                    
+                    <Link href="/blog">Blog</Link>
+                    <Link href="/about">About</Link>
                 </div>
             </div>
         </nav>
@@ -143,10 +149,10 @@ export default function RootLayout({
                     <div className="footer-links" style={{ minWidth: '200px' }}>
                         <h4 style={{ color: '#fff', marginBottom: '1rem', fontFamily: 'var(--font-cinzel)' }}>Customer Care</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <a href="/policies/refund-policy" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Refund Policy</a>
-                            <a href="/policies/shipping-policy" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Shipping Info</a>
-                            <a href="/policies/terms-policy" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Terms of Service</a>
-                            <a href="/about" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>About Us</a>
+                            <Link href="/policies/refund-policy" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Refund Policy</Link>
+                            <Link href="/policies/shipping-policy" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Shipping Info</Link>
+                            <Link href="/policies/terms-policy" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Terms of Service</Link>
+                            <Link href="/about" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>About Us</Link>
                         </div>
                     </div>
                 </div>
@@ -164,7 +170,7 @@ export default function RootLayout({
             </div>
         </footer>
 
-        {/* --- 2. SUPPORT BUBBLE ADDED HERE --- */}
+        {/* --- 2. SUPPORT BUBBLE --- */}
         <SupportBubble />
 
       </body>

@@ -1,175 +1,194 @@
 import Link from 'next/link'
-import Image from 'next/image' // <--- Added this import
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Successful Faith | Christian Streetwear',
-  description: 'Equipping the modern saint for spiritual warfare and marketplace success.',
+  title: 'Successful Faith | Battle Ready & Kingdom Minded',
+  description: 'Equipping the modern saint for the War Room and the Boardroom. Premium spiritual warfare apparel and Kingdom entrepreneur tools.',
 }
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ backgroundColor: '#000', color: '#fff', minHeight: '100vh' }}>
+
+      {/* 1. HERO SECTION (THE TRAFFIC COP) */}
+      <section style={{ 
+        height: '90vh', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        textAlign: 'center',
+        background: 'radial-gradient(circle at center, #1a1a1a 0%, #000 100%)',
+        padding: '2rem',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
         
-        {/* HERO SECTION: THE WARRIOR CALL (OPTIMIZED) */}
-        <section className="hero" style={{ 
-            position: 'relative', // Required for fill images
-            height: '85vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            padding: '0 1rem',
-            overflow: 'hidden' // Keeps the image from spilling out
-        }}>
+        {/* Background Texture Overlay */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.15, zIndex: 0 }}>
+             <Image 
+                src="/images/hero-bg.webp" 
+                alt="Background Texture" 
+                fill 
+                style={{ objectFit: 'cover' }}
+                priority
+             />
+        </div>
+
+        <div style={{ position: 'relative', zIndex: 10 }}>
+            <h1 style={{ 
+                fontFamily: 'var(--font-cinzel), serif', 
+                fontSize: 'clamp(3rem, 8vw, 6rem)', 
+                lineHeight: '1', 
+                marginBottom: '1.5rem',
+                letterSpacing: '-2px'
+            }}>
+                BATTLE READY. <br/>
+                <span style={{ color: '#d4af37' }}>KINGDOM MINDED.</span>
+            </h1>
             
-            {/* 1. THE OPTIMIZED BACKGROUND IMAGE */}
-            <Image 
-                src="/images/hero-bg.webp"
-                alt="Christian Streetwear Background"
-                fill
-                priority={true} // <--- This fixes the LCP Error
-                quality={85}
-                style={{ 
-                    objectFit: 'cover',
-                    zIndex: -2 // Puts it behind everything
-                }}
-            />
+            <p style={{ color: '#888', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
+                Apparel and tools for the War Room and the Boardroom. <br/>
+                Choose your path.
+            </p>
 
-            {/* 2. THE DARK GRADIENT OVERLAY */}
-            <div style={{
-                position: 'absolute',
-                top: 0, left: 0, right: 0, bottom: 0,
-                background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8))',
-                zIndex: -1 // Sits on top of image, behind text
-            }} />
-
-            {/* 3. THE CONTENT */}
-            <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
-                <h1 className="hero-title" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '4.5rem', marginBottom: '1rem', color: '#fff', letterSpacing: '2px', lineHeight: '1.1' }}>
-                    Equip Yourself <br />
-                    <span style={{ color: 'var(--accent-gold)' }}>For The Battle</span>
-                </h1>
-                <p className="hero-subtitle" style={{ fontSize: '1.4rem', color: '#e0e0e0', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
-                    Premium Heavyweight Armor for the Modern Saint.
-                </p>
-                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                    <Link href="/about" className="secondary-btn" style={{ background: 'transparent', border: '1px solid #fff' }}>
-                        Our Mission
-                    </Link>
-                    <Link href="/store" className="cta-btn">
-                        Shop The Armory
-                    </Link>
-                </div>
-            </div>
-        </section>
-
-        {/* SECTION 2: THE MANIFESTO */}
-        <section style={{ background: '#111', padding: '6rem 2rem', textAlign: 'center', borderBottom: '1px solid #222' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                <h2 style={{ fontFamily: 'var(--font-cinzel)', color: 'var(--accent-gold)', marginBottom: '1.5rem', fontSize: '2.2rem' }}>
-                    Not Just Clothing. <br /> It's Ammunition.
-                </h2>
-                <p style={{ color: '#ccc', lineHeight: '1.8', fontSize: '1.15rem' }}>
-                    Successful Faith is designed for the believer who understands that life is a spiritual battle.
-                    Whether you are in the boardroom or the war room, you need to be equipped.
-                    We build <strong>heavyweight armor</strong> and <strong>spiritual tools</strong> for the modern saint.
-                </p>
-            </div>
-        </section>
-
-        {/* SECTION 3: THE ARSENAL (4-Item Grid) */}
-        <section className="container" style={{ padding: '5rem 1.5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '3rem' }}>
-                <h2 className="section-title" style={{ marginBottom: 0 }}>Latest Drops</h2>
-                <Link href="/store" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>View Full Store &rarr;</Link>
-            </div>
+            {/* THE SPLIT BUTTONS */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
             
-            <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-                
-                {/* 1. Iron Sharpens Iron */}
-                <div className="product-card">
-                    <Link href="/store/iron-sharpens-iron-t-shirt">
-                        <div className="image-wrapper">
-                            <img src="/images/iron-back.webp" alt="Iron Sharpens Iron Tee" className="product-img" />
-                            <div className="hover-overlay"><span>View Gear</span></div>
-                        </div>
-                    </Link>
-                    <div className="product-details">
-                        <h3>Iron Sharpens Iron</h3>
-                        <p className="price">$38.00</p>
+                {/* BUTTON 1: WARFARE (Links to Warfare Collection) */}
+                <Link href="/store/collections/warfare" style={{ textDecoration: 'none' }}>
+                    <div style={{ 
+                        padding: '2rem 3rem', 
+                        border: '1px solid #333', 
+                        borderRadius: '4px', 
+                        background: '#111',
+                        minWidth: '280px',
+                        transition: 'transform 0.2s',
+                        cursor: 'pointer'
+                    }}>
+                        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#fff', fontFamily: 'var(--font-cinzel)' }}>WARFARE</h3>
+                        <p style={{ color: '#666', fontSize: '0.9rem' }}>Gym. Spiritual Combat. Grit.</p>
+                        <span style={{ display: 'block', marginTop: '1rem', color: '#fff', textDecoration: 'underline' }}>Shop Collection →</span>
                     </div>
-                </div>
+                </Link>
 
-                {/* 2. God is my CEO */}
-                <div className="product-card">
-                    <Link href="/store/god-is-my-ceo-t-shirt">
-                        <div className="image-wrapper">
-                            <img src="/images/ceo-tee-back.webp" alt="God is my CEO Tee" className="product-img" />
-                            <div className="hover-overlay"><span>View Gear</span></div>
-                        </div>
-                    </Link>
-                    <div className="product-details">
-                        <h3>God is my CEO</h3>
-                        <p className="price">$36.99</p>
+                {/* BUTTON 2: SUCCESS (Links to Success Collection) */}
+                <Link href="/store/collections/success" style={{ textDecoration: 'none' }}>
+                    <div style={{ 
+                        padding: '2rem 3rem', 
+                        border: '1px solid #d4af37', 
+                        borderRadius: '4px', 
+                        background: '#000',
+                        minWidth: '280px',
+                        transition: 'transform 0.2s',
+                        cursor: 'pointer',
+                        boxShadow: '0 0 20px rgba(212, 175, 55, 0.1)'
+                    }}>
+                        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#d4af37', fontFamily: 'var(--font-cinzel)' }}>SUCCESS</h3>
+                        <p style={{ color: '#888', fontSize: '0.9rem' }}>Business. Stewardship. Legacy.</p>
+                        <span style={{ display: 'block', marginTop: '1rem', color: '#d4af37', textDecoration: 'underline' }}>Shop Collection →</span>
                     </div>
-                </div>
-
-                {/* 3. Armor of God Hoodie (Restored) */}
-                <div className="product-card">
-                    <Link href="/store/armor-of-god-hoodie">
-                        <div className="image-wrapper">
-                            <img src="/images/Angel-hoodie.webp" alt="Armor of God Hoodie" className="product-img" />
-                            <div className="hover-overlay"><span>View Gear</span></div>
-                        </div>
-                    </Link>
-                    <div className="product-details">
-                        <h3>Full Armor Hoodie</h3>
-                        <p className="price">$55.00</p>
-                    </div>
-                </div>
-
-                {/* 4. Protection Guide ($5 Entry Point) */}
-                <div className="product-card">
-                    <Link href="/store/protection-guide">
-                        <div className="image-wrapper">
-                            <img src="/images/cover.webp" alt="Protection Guide" className="product-img" />
-                            <div className="hover-overlay"><span>Download Now</span></div>
-                        </div>
-                    </Link>
-                    <div className="product-details">
-                        <h3 style={{ color: 'var(--accent-gold)' }}>Protection Guide</h3>
-                        <p className="price">$5.00</p>
-                    </div>
-                </div>
+                </Link>
 
             </div>
-        </section>
+        </div>
+      </section>
 
-        {/* SECTION 4: SHARPEN YOUR SPIRIT (Pushes the Journal) */}
-        <section style={{ background: '#0a0a0a', padding: '6rem 2rem', borderTop: '1px solid #222' }}>
-            <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4rem' }}>
-                <div style={{ flex: '1 1 400px' }}>
-                    <h2 style={{ fontFamily: 'var(--font-cinzel)', fontSize: '2.5rem', marginBottom: '1.5rem', color: '#fff' }}>
-                        Enter The War Room
-                    </h2>
-                    <p style={{ color: '#ccc', lineHeight: '1.8', marginBottom: '2rem' }}>
-                        Stop praying in circles. Start building a history with God. 
-                        Our 30-Day Guided Prayer Journal is designed to help you focus your prayers, document your breakthroughs, and hear God clearly.
-                    </p>
-                    <Link href="/prayer-journal" className="secondary-btn">
-                        Get The Journal ($15)
-                    </Link>
-                </div>
-                <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
-                     <img 
-                        src="/images/cover.webp" 
-                        alt="30-Day Prayer Journal" 
-                        style={{ maxWidth: '300px', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', border: '1px solid #333' }}
+      {/* 2. FEATURED BEST SELLERS (3 Pillars: Iron, CEO, Planner) */}
+      <section style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', fontFamily: 'var(--font-cinzel), serif', fontSize: '2.5rem', marginBottom: '4rem' }}>
+          Current Best Sellers
+        </h2>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+          
+          {/* ITEM 1: Iron Sharpens Iron (Warfare) */}
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/store/collections/warfare/iron-sharpens-iron-t-shirt">
+                <div style={{ height: '400px', position: 'relative', background: '#111', borderRadius: '8px', marginBottom: '1.5rem', border: '1px solid #333', overflow: 'hidden' }}>
+                     <Image 
+                        src="/images/iron-back.webp" 
+                        alt="Iron Sharpens Iron Back Print" 
+                        fill 
+                        style={{ objectFit: 'cover' }}
                      />
                 </div>
-            </div>
-        </section>
+            </Link>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Iron Sharpens Iron</h3>
+            <p style={{ color: '#888', marginBottom: '1rem' }}>Heavyweight Tee</p>
+            <Link href="/store/collections/warfare/iron-sharpens-iron-t-shirt" style={{ color: '#fff', borderBottom: '1px solid #fff', textDecoration: 'none' }}>
+              Shop Now
+            </Link>
+          </div>
+
+          {/* ITEM 2: God is My CEO (Success) */}
+          <div style={{ textAlign: 'center' }}>
+             <Link href="/store/collections/success/god-is-my-ceo-t-shirt">
+                <div style={{ height: '400px', position: 'relative', background: '#111', borderRadius: '8px', marginBottom: '1.5rem', border: '1px solid #d4af37', overflow: 'hidden' }}>
+                    <Image 
+                        src="/images/ceo-tee-back.webp" 
+                        alt="God is My CEO Back Print" 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                     />
+                </div>
+            </Link>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>God is My CEO</h3>
+            <p style={{ color: '#888', marginBottom: '1rem' }}>Vintage Gold Edition</p>
+            <Link href="/store/collections/success/god-is-my-ceo-t-shirt" style={{ color: '#d4af37', borderBottom: '1px solid #d4af37', textDecoration: 'none' }}>
+              Shop Now
+            </Link>
+          </div>
+          
+          {/* ITEM 3: Kingdom Planner (Digital Tool) */}
+          <div style={{ textAlign: 'center' }}>
+             <Link href="/store/collections/success/digital-planner">
+                <div style={{ height: '400px', position: 'relative', background: '#111', borderRadius: '8px', marginBottom: '1.5rem', border: '1px solid #fff', overflow: 'hidden' }}>
+                    <Image 
+                        src="/images/journal-cover.webp" 
+                        alt="30-Day Kingdom Planner Cover" 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                     />
+                     {/* Badge */}
+                     <div style={{ position: 'absolute', top: '10px', right: '10px', background: '#fff', color: '#000', padding: '5px 10px', fontSize: '0.8rem', fontWeight: 'bold' }}>
+                        DIGITAL SYSTEM
+                     </div>
+                </div>
+            </Link>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>The Kingdom Planner</h3>
+            <p style={{ color: '#888', marginBottom: '1rem' }}>Strategy System ($15.00)</p>
+            <Link href="/store/collections/success/digital-planner" style={{ color: '#fff', borderBottom: '1px solid #fff', textDecoration: 'none' }}>
+              Download Now
+            </Link>
+          </div>
+
+        </div>
+      </section>
+      
+      {/* 3. BOTTOM CTA: THE SYSTEM */}
+      <section style={{ background: '#0a0a0a', padding: '6rem 2rem', borderTop: '1px solid #222', marginTop: '4rem' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{ fontFamily: 'var(--font-cinzel)', fontSize: '2.5rem', marginBottom: '1.5rem', color: '#d4af37' }}>
+                Stop Reacting. Start Commanding.
+            </h2>
+            <p style={{ color: '#ccc', lineHeight: '1.8', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem auto' }}>
+                The 30-Day Kingdom Planner is not just a calendar. It is a system designed to align your business goals with your spiritual assignment.
+            </p>
+            <Link href="/store/collections/success/digital-planner" style={{ 
+                display: 'inline-block',
+                background: '#d4af37',
+                color: '#000',
+                padding: '15px 40px',
+                fontWeight: 'bold',
+                textDecoration: 'none',
+                borderRadius: '4px'
+            }}>
+                View The System
+            </Link>
+        </div>
+      </section>
 
     </main>
   )
