@@ -15,8 +15,8 @@ export default function ArmorProductPage() {
         {/* LEFT: IMAGES */}
         <ProductGallery 
           images={[
-            { src: '/images/armor-hoodie-back.webp', alt: 'Armor of God Back Print' },
-            { src: '/images/armor-hoodie-front.webp', alt: 'Be Strong and Courageous Front' }
+            { src: '/images/Angel-hoodie.webp', alt: 'Armor of God Front Print' },
+            
           ]} 
         />
 
@@ -27,11 +27,11 @@ export default function ArmorProductPage() {
             <h1 className="product-title">The Armor of God</h1>
             <p className="product-subtitle">Joshua 1:9 | Heavyweight Fortress Hoodie</p>
             
-            <div className="product-price-lg">$65.00</div>
+            <div className="product-price-lg">$55.00</div>
 
             {/* BUY BUTTON */}
             <a 
-                href="YOUR_FOURTHWALL_LINK_HERE" 
+                href="https://successfulfaith.creator-spring.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="buy-btn-lg"

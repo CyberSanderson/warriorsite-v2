@@ -61,7 +61,7 @@ export default function WarfareCollectionPage() {
         <ProductCard 
           href="/store/collections/warfare/armor-of-god-hoodie"
           title="Armor of God Hoodie"
-          price="$65.00"
+          price="$55.00"
           tag="Heavyweight"
           image="/images/Angel-hoodie.webp" 
         />
