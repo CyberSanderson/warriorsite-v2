@@ -66,6 +66,14 @@ export default function ProtectionGuidePage() {
                     A Psalm 91 Prayer Guide for women feeling fear, overwhelm, or spiritual anxiety.
                 </p>
 
+                <p style={{ marginTop: '2rem', fontSize: '1rem', color: '#bbb' }}>
+                    Open this guide when your mind won’t slow down, fear feels louder than faith,
+                    or you want to pray but don’t know what to say.
+            </p>
+
+            <br/>
+
+
                 {/* EMOTIONAL CTA BUTTON */}
                 <a 
                     href="https://successfulfaith.gumroad.com/l/efiwxb" 
@@ -84,10 +92,14 @@ export default function ProtectionGuidePage() {
                         transition: 'transform 0.2s'
                     }}
                 >
-                    Get Spiritual Peace Now
+                    Get Spiritual Peace Now - $7
                 </a>
                 <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#888' }}>
                     Instant Digital Download
+                </p>
+
+                <p style={{ marginTop: '0.4rem', fontSize: '0.85rem', color: '#777' }}>
+                    No subscription · Yours forever
                 </p>
             </div>
         </section>
@@ -157,7 +169,7 @@ export default function ProtectionGuidePage() {
 
                     <div style={{ marginBottom: '2rem' }}>
                         <h4 style={{ color: '#d4af37', marginBottom: '0.5rem', fontSize: '1.2rem' }}>✔ Scripture for Your Mind & Home</h4>
-                        <p style={{ color: '#aaa' }}>Specific verses to combat night terrors and anxiety.</p>
+                        <p style={{ color: '#aaa' }}>Specific verses to calm anxious thoughts and bring rest to your mind.</p>
                     </div>
 
                     <div style={{ marginBottom: '2rem' }}>
