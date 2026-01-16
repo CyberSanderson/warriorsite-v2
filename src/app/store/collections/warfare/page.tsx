@@ -70,7 +70,7 @@ export default function WarfareCollectionPage() {
         <ProductCard 
           href="/store/collections/warfare/protection-guide"
           title="Divine Protection Guide"
-          price="$5.00"
+          price="$7.00"
           tag="Digital Download"
           image="/images/cover.webp" 
         />
